@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css</title>
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		div{
+			margin-top: 5px;
+			margin-left: 12.5px;
+		}
+		.BigFirst>div{
+			display: inline-block;
+			width: 95px;
+			height: 25px;
+			border-top: 1px solid #e5e5e5;
+			border-bottom: 1px solid #e5e5e5;
+			box-sizing:border-box ;
+		}
+
+		.small{
+			position: relative;
+			text-align: center;
+			line-height: 25px;
+		}
+		.one{
+			color: #666;
+			border-left: 1px solid #e5e5e5;
+		}
+		.one:after{
+			content: "";
+			border:12.5px solid transparent;
+			border-left-color: white;
+			width:0;height:0;
+			position:absolute;
+			top:0px;
+			right: -24px;
+		}
+		.b{
+			border-style: dashed dashed dashed dashed;
+    		border-color: transparent;
+            border-left-color: #e5e5e5;
+    		border-width: 12.5px;
+    		display: inline-block;
+    		width: 0;
+    		height: 0;
+    		line-height: 0;
+    		position: absolute;
+    		top: 0px;
+    		right: -25px;
+		}
+		.BigFirst .two{
+			color: white;
+			background-color: #108EE9;
+			border: 0px;
+			/* width: 107.5px; */
+		}
+		.two:before{
+			content: "";
+			border:12.5px solid transparent;
+			border-left-color: white;
+			width:0;height:0;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+		.two:after{
+			content: "";
+			border:12.5px solid transparent;
+			border-left-color: #108EE9;
+			width:0;height:0;
+			position:absolute;
+			top:0px;
+			right: -24px;
+		}
+		.three{
+			position: relative;
+		}
+		.three:before{
+			content: "";
+			border:12.5px solid transparent;
+			border-left-color: #e5e5e5;
+			width:0;height:0;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+		.a{
+			border-style: dashed dashed dashed dashed;
+    		border-color: transparent;
+            border-left-color: white;
+    		border-width: 12.5px;
+    		display: inline-block;
+    		width: 0;
+    		height: 0;
+    		line-height: 0;
+    		position: absolute;
+    		top: 0px;
+    		left: -1px;
+		}
+		.three:after{
+			content: "";
+			border:12.5px solid transparent;
+			border-left-color: white;
+			width:0;height:0;
+			position:absolute;
+			top:0px;
+			right: -24px;
+		}
+		.BigFirst .four{
+			border-right: 1px solid #e5e5e5;
+			/* width: 107.5px; */
+		}
+		.four:before{
+			content: "";
+			border:12.5px solid transparent;
+			border-left-color: #e5e5e5;
+			width:0;height:0;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+		.Second{
+			width: 95px;
+			height: 25px;
+			border: 1px solid #D0021B;
+			color: #D0021B;
+			text-align: center;
+			line-height: 25px;
+			margin-left: 360px;
+		}
+	</style>
+</head>
+<body>
+	<div class="BigFirst">
+		<div class="small one">草稿<span class="b"></span></div>
+		<div class="small two">待审核</div>
+		<div class="small three"><span class="a"></span>待复核<span class="b"></span></div>
+		<div class="small four"><span class="a"></span>已核准</div>
+	</div>
+	<div class="Second">已终止</div>
+</body>
+<script>
+	function Fun(a) {
+	if (a.length == 1) {
+		var stop = document.createElement('div');
+		var body=document.getElementsByTagName('body')[0];
+		stop.style.height = 25+'px';
+		stop.style.width = 90+'px';
+		stop.innerHTML='已终止';
+		stop.style.border = '1px solid #D0021B';
+		stop.style.color = "#D0021B";
+		stop.style.textAlign = 'center';
+		stop.style.lineHeight = '25px';
+		document.body.appendChild(stop);
+	}
+	for (var i = 0; i < a.length; i++) {
+		for(var p in a[i]){
+			if(p.isShadowed==true&&p.isCurrentStatus==true){
+				//设置对应箭头的背景色 
+			}
+		}
+	}
+}
+// Fun([{
+// 	"a": "1"
+// }]);
+</script>
+</html>
